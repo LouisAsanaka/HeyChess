@@ -13,4 +13,7 @@ dist/
 build/
 *.egg-info/
 
+activate.bat
+deactivate.bat
+
 .vscode/
