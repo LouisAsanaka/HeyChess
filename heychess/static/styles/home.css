@@ -1,0 +1,10 @@
+.instructions {
+    display: block;
+    height: 18%;
+}
+
+.games {
+    display: block;
+    height: 80%;
+    margin-top: 1%;
+}

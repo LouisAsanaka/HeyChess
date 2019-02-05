@@ -1,6 +1,9 @@
 import os
 
 from flask import Flask
+from flask_socketio import SocketIO
+
+socketio = SocketIO()
 
 
 def create_app(test_config=None):
@@ -15,7 +18,7 @@ def create_app(test_config=None):
     else:
         # Load the test config if passed in
         app.config.from_mapping(test_config)
-    
+
     # Ensure the instance folder exists
     try:
         os.makedirs(app.instance_path)
@@ -25,4 +28,7 @@ def create_app(test_config=None):
     from . import home
     app.register_blueprint(home.bp)
 
+    from . import events
+
+    socketio.init_app(app)
     return app

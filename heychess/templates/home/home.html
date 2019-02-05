@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block resources %}
-  
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
 {% endblock %}
 
 {% block side_bar %}
@@ -9,5 +9,10 @@
 {% endblock %}
 
 {% block content %}
+  <div class="instructions border">
+    
+  </div>
+  <div class="games border">
 
+  </div>
 {% endblock %}

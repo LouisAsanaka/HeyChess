@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/reset.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <script src="{{ url_for('static', filename='scripts/connect.js') }}"></script>
   {% block resources %}{% endblock %}
 </head>
 <body>
@@ -23,13 +25,16 @@
       </ul>
     </nav>
     <section class="content border">
-        {% for message in get_flashed_messages() %}
-          <div class="flash">{{ message }}</div>
-        {% endfor %}
-        {% block content %}{% endblock %}
-      </section><!--
-      --><div class="side-bar border">
-        {% block side_bar %}{% endblock %}
-      </div>
+      {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+      {% block content %}{% endblock %}
+    </section><!--
+    --><div class="side-bar border">
+      {% block side_bar %}{% endblock %}
+    </div>
   </div>
+  <footer class="footer">
+    2019
+  </footer>
 </body>
