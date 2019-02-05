@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<title>{% block title %}{% endblock %} - HeyChess</title>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/reset.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  {% block resources %}{% endblock %}
+</head>
+<body>
+  <div class="logo-area">
+    <img id="logo" src="{{ url_for('static', filename='img/logo.png') }}">
+    <div class="border">
+      Stuff
+    </div>
+  </div>
+  <div class="main-area">
+    <nav class="nav-bar">
+      <ul>
+        <li><a class="nav-link" href="{{ url_for('home.home') }}">Home</a></li>
+        <li><a class="nav-link" href="#">Play</a></li>
+        <li><a class="nav-link" href="#">Help</a></li>
+        <li><a class="nav-link" href="#">About</a></li>
+      </ul>
+    </nav>
+    <section class="content border">
+        {% for message in get_flashed_messages() %}
+          <div class="flash">{{ message }}</div>
+        {% endfor %}
+        {% block content %}{% endblock %}
+      </section><!--
+      --><div class="side-bar border">
+        {% block side_bar %}{% endblock %}
+      </div>
+  </div>
+</body>
