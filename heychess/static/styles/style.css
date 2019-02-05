@@ -31,7 +31,7 @@ body {
     width: 100%;
 }
 
-.nav-link {
+.nav-item > a {
     display: block;
     color: white;
     text-align: center;
@@ -39,7 +39,15 @@ body {
     text-decoration: none;
 }
 
-.nav-link:hover {
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.nav-item > a:hover {
     background-color: #111;
 }
 
@@ -50,10 +58,6 @@ body {
     border-color: #333;
     border-style: solid;
     border-radius: 5px;
-}
-
-.nav-bar > ul > li {
-    float: left;
 }
 
 #logo {

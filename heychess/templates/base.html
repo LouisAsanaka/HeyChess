@@ -18,19 +18,20 @@
   <div class="main-area">
     <nav class="nav-bar">
       <ul>
-        <li><a class="nav-link" href="{{ url_for('home.home') }}">Home</a></li>
-        <li><a class="nav-link" href="#">Play</a></li>
-        <li><a class="nav-link" href="#">Help</a></li>
-        <li><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item left"><a href="{{ url_for('home.home') }}">Home</a></li>
+        <li class="nav-item left"><a href="#">Play</a></li>
+        <li class="nav-item left"><a href="#">Help</a></li>
+        <li class="nav-item left"><a href="#">About</a></li>
+        <li id="username" class="nav-item right"><a href="#">Username</a></li>
       </ul>
     </nav>
-    <section class="content border">
+    <section class="content">
       {% for message in get_flashed_messages() %}
         <div class="flash">{{ message }}</div>
       {% endfor %}
       {% block content %}{% endblock %}
     </section><!--
-    --><div class="side-bar border">
+    --><div class="side-bar">
       {% block side_bar %}{% endblock %}
     </div>
   </div>

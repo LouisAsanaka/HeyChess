@@ -2,15 +2,16 @@
 
 {% block resources %}
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+  <script src="{{ url_for('static', filename='scripts/home.js') }}"></script>
 {% endblock %}
 
 {% block side_bar %}
-
+  <ul id="player-list"></ul>
 {% endblock %}
 
 {% block content %}
   <div class="instructions border">
-    
+    <p>Click on a name on the right to challenge the player to a game.</p>
   </div>
   <div class="games border">
 

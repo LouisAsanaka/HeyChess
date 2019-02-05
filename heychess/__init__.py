@@ -5,7 +5,6 @@ from flask_socketio import SocketIO
 
 socketio = SocketIO()
 
-
 def create_app(test_config=None):
     # Create and configure the app
     app = Flask(__name__, instance_relative_config=True)
@@ -28,7 +27,7 @@ def create_app(test_config=None):
     from . import home
     app.register_blueprint(home.bp)
 
-    from . import events
+    from . import handler
 
     socketio.init_app(app)
     return app
