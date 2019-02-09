@@ -9,13 +9,13 @@ body {
 
 .logo-area {
     float: left;
-    width: 18%;
-    margin-right: 1%;
+    margin: 1% 2%;
+    width: 200px;
+    max-width: 200px;
 }
 
 .main-area {
-    float: right;
-    width: 78%;
+    overflow: hidden;
     margin-right: 2%;
 }
 
@@ -67,7 +67,7 @@ body {
     height: 200px;
 }
 
-.logo-area > .border {
+.notes {
     clear: left;
     display: block;
     width: 100%;
@@ -78,19 +78,19 @@ body {
 .content {
     clear: left;
     float: left;
-    height: 430px;
+    height: 500px;
     width: 73%;
     margin-top: 2%;
 }
 
 .side-bar {
     float: right;
-    height: 400px;
+    height: 500px;
     width: 25%;
     margin-top: 2%;
 }
 
 .footer {
-    display: block;
+    display: none;
     width: 100%;
 }

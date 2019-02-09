@@ -1,19 +1,32 @@
 {% extends 'base.html' %}
 
 {% block resources %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/chessboard-0.3.0.min.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+  <script src="{{ url_for('static', filename='scripts/chessboard-0.3.0.js') }}"></script>
   <script src="{{ url_for('static', filename='scripts/home.js') }}"></script>
+  <script src="{{ url_for('static', filename='scripts/play.js') }}"></script>
 {% endblock %}
 
 {% block side_bar %}
-  <ul id="player-list"></ul>
+  <ul id="player-list">
+    <li class="list-title"><a>Online Players</a></li>
+  </ul>
+  <ul id="challenges">
+    <li class="list-title"><a>Challenges</a></li>
+  </ul>
 {% endblock %}
 
 {% block content %}
-  <div class="instructions border">
-    <p>Click on a name on the right to challenge the player to a game.</p>
+  <div id="board" style="width: 500px"></div>
+  <div id="promotion-dialog">
+    <ol id="promote-to">
+      <li class="ui-state-default"><span class="piece-name">q</span><img class="promotion-piece-q promotion-piece" /></li>
+      <li class="ui-state-default"><span class="piece-name">r</span><img class="promotion-piece-r promotion-piece" /></li>
+      <li class="ui-state-default"><span class="piece-name">n</span><img class="promotion-piece-n promotion-piece" /></li>
+      <li class="ui-state-default"><span class="piece-name">b</span><img class="promotion-piece-b promotion-piece" /></li>
+    </ol>
   </div>
-  <div class="games border">
-
-  </div>
+  <div id="gameover-dialog"></div>
 {% endblock %}

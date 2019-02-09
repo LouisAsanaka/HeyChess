@@ -2,8 +2,15 @@
 <title>{% block title %}{% endblock %} - HeyChess</title>
 <head>
   <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}" sizes="16x16">  
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/reset.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/notifications.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  
+  <script src="{{ url_for('static', filename='scripts/notifications.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
   <script src="{{ url_for('static', filename='scripts/connect.js') }}"></script>
   {% block resources %}{% endblock %}
@@ -11,7 +18,7 @@
 <body>
   <div class="logo-area">
     <img id="logo" src="{{ url_for('static', filename='img/logo.png') }}">
-    <div class="border">
+    <div class="notes border">
       Stuff
     </div>
   </div>
@@ -26,9 +33,6 @@
       </ul>
     </nav>
     <section class="content">
-      {% for message in get_flashed_messages() %}
-        <div class="flash">{{ message }}</div>
-      {% endfor %}
       {% block content %}{% endblock %}
     </section><!--
     --><div class="side-bar">
