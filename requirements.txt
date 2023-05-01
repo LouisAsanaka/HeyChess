@@ -4,7 +4,7 @@ colorama==0.4.1
 coolname==1.1.0
 dnspython==1.16.0
 eventlet==0.31.0
-Flask==1.0.2
+Flask==2.3.2
 Flask-SocketIO==3.2.1
 greenlet==0.4.15
 isort==4.3.4
